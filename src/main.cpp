@@ -1,4 +1,5 @@
-#include "plankton.h"
+#include "pt/plankton.h"
+#include "pt/Log.h"
 
 #define SCR_WIDTH  800
 #define SCR_HEIGHT 600

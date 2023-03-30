@@ -11,3 +11,11 @@ file(GLOB ASSETS
 )
 
 add_executable(${PROJECT_NAME} ${SOURCE} ${ASSETS})
+
+add_subdirectory(vendor/plankton)
+target_link_libraries(${PROJECT_NAME} plankton)
+target_include_directories(${PROJECT_NAME} PRIVATE "vendor/plankton/include" "vendor/plankton/vendor/spdlog")
+
+# Macro for absolute path to assets folder
+# NOTE: use relative path for release
+target_compile_definitions(${PROJECT_NAME} PUBLIC ASSETS_PATH="${CMAKE_CURRENT_SOURCE_DIR}/assets/")
